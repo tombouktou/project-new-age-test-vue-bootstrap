@@ -34,13 +34,10 @@ onMounted(async () => {
   try {
     const res = await fetch(`https://dummyjson.com/products/${route.params.id}`);
     if (res.ok) {
-      //explain the line before this one 
-      // 
-
-
       product.value = await res.json();
-
     }
+  } catch (error) {
+    console.error("Error fetching product:", error);
   } finally {
     isLoading.value = false;
   }
