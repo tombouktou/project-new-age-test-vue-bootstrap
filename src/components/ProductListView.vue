@@ -8,7 +8,7 @@
           <div class="position-relative display-flex">
             <span class="badge bg-success position-absolute top-0 end-0 m-2 px-3 py-2 fs-6">{{ product.price }}€</span>
           </div>
-          <img :src="product.thumbnail" class="card-img-top" :alt="product.title" >
+            <img :src="Array.isArray(product.images) ? product.images[product.images.length - 1] : product.images" class="card-img" :alt="product.title" >
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ product.title }}</h5>
             <p class="card-text">{{ product.description }}</p>

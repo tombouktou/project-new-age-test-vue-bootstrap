@@ -4,7 +4,7 @@
     <BootstrapLoader v-if="isLoading" />
     <div v-else-if="product" class="d-flex justify-content-center">
       <div class="card img col-12 col-md-6 col-lg-4">
-      <img :src="product.thumbnail" class="card-img-top" :alt="product.title" style="max-width: 400px; max-height: 400px; object-fit: contain; margin: auto;">
+      <img :src="Array.isArray(product.images) ? product.images[product.images.length - 1] : product.images" class="card-img" :alt="product.title" >
       <div class="card-body">
         <h2 class="card-title">{{ product.title }}</h2>
         <p class="card-text">{{ product.description }}</p>
@@ -34,7 +34,12 @@ onMounted(async () => {
   try {
     const res = await fetch(`https://dummyjson.com/products/${route.params.id}`);
     if (res.ok) {
+      //explain the line before this one 
+      // 
+
+
       product.value = await res.json();
+
     }
   } finally {
     isLoading.value = false;
