@@ -33,6 +33,8 @@ onMounted(async () => {
     const res = await fetch('https://dummyjson.com/products');
     const data = await res.json();
     products.value = data.products;
+  } catch (error) {
+    console.error("Error fetching product:", error);
   } finally {
     isLoading.value = false;
   }

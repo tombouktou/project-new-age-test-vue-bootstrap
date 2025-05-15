@@ -1,6 +1,6 @@
 <template>
   <div class="container my-4">
-    <router-link to="/" class="btn btn-link mb-3">&larr; Retour à la liste</router-link>
+    <router-link to="/" class="btn btn-link mb-3 glow-on-hover" data-glow-color="#f50057">&larr; Retour à la liste</router-link>
     <BootstrapLoader v-if="isLoading" />
     <div v-else-if="product" class="d-flex justify-content-center">
       <div class="card img col-12 col-md-6 col-lg-4">
