@@ -2,16 +2,18 @@
   <div class="container my-4">
     <router-link to="/" class="btn btn-link mb-3">&larr; Retour à la liste</router-link>
     <BootstrapLoader v-if="isLoading" />
-    <div v-else-if="product" class="card mx-auto" style="max-width: 600px;">
-      <img :src="product.thumbnail" class="card-img-top" :alt="product.title" style="object-fit:cover;max-height:300px;">
+    <div v-else-if="product" class="d-flex justify-content-center">
+      <div class="card img col-12 col-md-6 col-lg-4">
+      <img :src="product.thumbnail" class="card-img-top" :alt="product.title" style="max-width: 400px; max-height: 400px; object-fit: contain; margin: auto;">
       <div class="card-body">
         <h2 class="card-title">{{ product.title }}</h2>
         <p class="card-text">{{ product.description }}</p>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Prix:</strong> {{ product.price }} $</li>
-          <li class="list-group-item"><strong>Catégorie:</strong> {{ product.category }}</li>
-          <li class="list-group-item"><strong>Stock:</strong> {{ product.stock }}</li>
+        <li class="list-group-item"><strong>Prix:</strong> {{ product.price }} $</li>
+        <li class="list-group-item"><strong>Catégorie:</strong> {{ product.category }}</li>
+        <li class="list-group-item"><strong>Stock:</strong> {{ product.stock }}</li>
         </ul>
+      </div>
       </div>
     </div>
     <div v-else class="alert alert-danger">Produit non trouvé.</div>

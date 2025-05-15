@@ -5,7 +5,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-// No logic needed, purely presentational
-</script>
