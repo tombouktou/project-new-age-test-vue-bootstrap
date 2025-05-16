@@ -1,9 +1,9 @@
 <script setup>
-import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import HeaderView from './components/HeaderView.vue';
 </script>
 
 <template>
+  <HeaderView />
   <router-view />
 </template>
 
